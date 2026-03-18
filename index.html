@@ -1,1 +1,1047 @@
-welcome!
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tawazon International Investment LLC</title>
+	<meta name="description" content="Tawazon International Investment LLC is a Muscat-based strategic investment, liaison, and power-broking firm serving businesses across the GCC.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<style>
+		@font-face {
+			font-family: "SBC";
+			src: url("./fonts/sbc.otf") format("opentype"), local("SBC"), local("SBC Regular"), local("SBC-Regular");
+			font-display: swap;
+		}
+
+		:root {
+			--bg: #f4efe8;
+			--surface: rgba(255, 255, 255, 0.74);
+			--surface-strong: rgba(255, 255, 255, 0.9);
+			--surface-dark: #10231f;
+			--text: #17261f;
+			--muted: #5f6f68;
+			--line: rgba(23, 38, 31, 0.1);
+			--accent: #ab7a38;
+			--accent-soft: rgba(171, 122, 56, 0.12);
+			--shadow: 0 24px 80px rgba(17, 31, 26, 0.12);
+			--radius-lg: 32px;
+			--radius-md: 22px;
+			--radius-sm: 16px;
+			--container: min(1180px, calc(100vw - 40px));
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			margin: 0;
+			font-family: "SBC", "Manrope", sans-serif;
+			background:
+				radial-gradient(circle at top left, rgba(171, 122, 56, 0.22), transparent 32%),
+				radial-gradient(circle at 85% 20%, rgba(31, 73, 61, 0.18), transparent 26%),
+				linear-gradient(180deg, #fbf8f3 0%, #f1ece4 44%, #ece6dc 100%);
+			color: var(--text);
+			min-height: 100vh;
+			overflow-x: hidden;
+		}
+
+		body.lang-ar {
+			font-family: "SBC", "Noto Kufi Arabic", sans-serif;
+		}
+
+		body::before {
+			content: "";
+			position: fixed;
+			inset: 0;
+			background-image:
+				linear-gradient(rgba(23, 38, 31, 0.035) 1px, transparent 1px),
+				linear-gradient(90deg, rgba(23, 38, 31, 0.035) 1px, transparent 1px);
+			background-size: 42px 42px;
+			mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 92%);
+			pointer-events: none;
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		img {
+			max-width: 100%;
+			display: block;
+		}
+
+		.page-shell {
+			width: var(--container);
+			margin: 0 auto;
+			position: relative;
+		}
+
+		.site-header {
+			position: sticky;
+			top: 0;
+			z-index: 30;
+			backdrop-filter: blur(18px);
+			background: rgba(244, 239, 232, 0.72);
+			border-bottom: 1px solid rgba(23, 38, 31, 0.06);
+		}
+
+		.site-header-inner {
+			width: var(--container);
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+			padding: 18px 0;
+		}
+
+		.brand {
+			display: flex;
+			align-items: center;
+			gap: 0;
+		}
+
+		.brand-text {
+			display: grid;
+			gap: 3px;
+		}
+
+		.brand-text strong {
+			font-size: 0.9rem;
+			font-weight: 800;
+			letter-spacing: 0.04em;
+		}
+
+		.brand-text strong {
+			text-transform: uppercase;
+		}
+
+		.brand-text span {
+			font-size: 0.72rem;
+			color: var(--muted);
+		}
+
+		.header-controls {
+			display: flex;
+			align-items: center;
+			gap: 14px;
+		}
+
+		.nav-links {
+			display: flex;
+			align-items: center;
+			gap: 18px;
+			color: var(--muted);
+			font-size: 0.86rem;
+		}
+
+		.mobile-bottom-nav {
+			display: none;
+		}
+
+
+		.hero {
+			padding: 56px 0 34px;
+		}
+
+		.hero-grid {
+			display: grid;
+			grid-template-columns: 1.15fr 0.85fr;
+			gap: 30px;
+			align-items: stretch;
+		}
+
+		.hero-copy,
+		.hero-media,
+		.content-card,
+		.sector-card,
+		.contact-panel,
+		.insight-card {
+			border: 1px solid var(--line);
+			background: var(--surface);
+			backdrop-filter: blur(18px);
+			box-shadow: var(--shadow);
+		}
+
+		.hero-copy {
+			padding: 42px;
+			border-radius: var(--radius-lg);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.hero-copy::after {
+			content: "";
+			position: absolute;
+			width: 220px;
+			height: 220px;
+			border-radius: 50%;
+			background: radial-gradient(circle, rgba(171, 122, 56, 0.18), transparent 70%);
+			top: -70px;
+			right: -50px;
+		}
+
+		.eyebrow {
+			display: inline-flex;
+			color: var(--accent);
+			font-size: 0.76rem;
+			letter-spacing: 0.16em;
+			text-transform: uppercase;
+			margin-bottom: 18px;
+			font-weight: 700;
+		}
+
+		h1,
+		h2,
+		h3,
+		p {
+			margin: 0;
+		}
+
+		h1 {
+			font-size: clamp(1.2rem, 2vw, 1.95rem);
+			line-height: 1.14;
+			letter-spacing: -0.06em;
+			max-width: none;
+			white-space: normal;
+			text-wrap: balance;
+		}
+
+		body.lang-ar h1,
+		body.lang-ar h2,
+		body.lang-ar h3 {
+			letter-spacing: normal;
+		}
+
+		.hero-intro {
+			margin-top: 24px;
+			max-width: 60ch;
+			font-size: 0.92rem;
+			line-height: 1.8;
+			color: var(--muted);
+		}
+
+		.hero-actions {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 14px;
+			margin-top: 30px;
+		}
+
+		.button {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 46px;
+			padding: 0 18px;
+			border-radius: 999px;
+			font-weight: 700;
+			font-size: 0.9rem;
+			transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+		}
+
+		.button:hover {
+			transform: translateY(-1px);
+		}
+
+		.button-primary {
+			background: var(--surface-dark);
+			color: #f8f4ed;
+			box-shadow: 0 16px 36px rgba(16, 35, 31, 0.18);
+		}
+
+		.button-secondary {
+			background: rgba(16, 35, 31, 0.06);
+			color: var(--text);
+		}
+
+		.hero-meta {
+			margin-top: 42px;
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 16px;
+		}
+
+		.stat {
+			padding: 18px 18px 16px;
+			border-radius: 20px;
+			background: rgba(255, 255, 255, 0.62);
+			border: 1px solid rgba(23, 38, 31, 0.08);
+		}
+
+		.stat strong {
+			display: block;
+			font-size: 1rem;
+			margin-bottom: 6px;
+		}
+
+		.stat span {
+			color: var(--muted);
+			font-size: 0.82rem;
+			line-height: 1.7;
+		}
+
+		.hero-media {
+			border-radius: var(--radius-lg);
+			overflow: hidden;
+			position: relative;
+			min-height: 620px;
+			background:
+				linear-gradient(180deg, rgba(7, 15, 13, 0.08), rgba(7, 15, 13, 0.46)),
+				url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80") center/cover;
+		}
+
+		.media-card {
+			position: absolute;
+			left: 24px;
+			right: 24px;
+			bottom: 24px;
+			padding: 22px;
+			border-radius: 24px;
+			background: rgba(10, 20, 18, 0.62);
+			border: 1px solid rgba(255, 255, 255, 0.12);
+			color: #f6f1ea;
+			backdrop-filter: blur(12px);
+		}
+
+		.media-card h3 {
+			font-size: 0.95rem;
+			margin-bottom: 12px;
+		}
+
+		.media-card p {
+			color: rgba(246, 241, 234, 0.82);
+			line-height: 1.8;
+			font-size: 0.86rem;
+		}
+
+		section {
+			padding: 18px 0 26px;
+		}
+
+		.section-head {
+			display: flex;
+			align-items: end;
+			justify-content: space-between;
+			gap: 24px;
+			margin-bottom: 20px;
+		}
+
+		.section-head h2 {
+			font-size: clamp(1rem, 1.35vw, 1.28rem);
+			line-height: 1.22;
+			letter-spacing: -0.05em;
+			max-width: none;
+			white-space: normal;
+			text-wrap: balance;
+		}
+
+		.section-head p {
+			max-width: 54ch;
+			color: var(--muted);
+			line-height: 1.8;
+			font-size: 0.88rem;
+		}
+
+		.content-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 22px;
+		}
+
+		.content-card {
+			border-radius: var(--radius-md);
+			padding: 28px;
+		}
+
+		.content-card h3 {
+			font-size: 0.94rem;
+			margin-bottom: 12px;
+		}
+
+		.content-card p {
+			color: var(--muted);
+			line-height: 1.8;
+			font-size: 0.86rem;
+		}
+
+		.sectors-grid {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 22px;
+		}
+
+		.sector-card {
+			border-radius: var(--radius-md);
+			overflow: hidden;
+			position: relative;
+			min-height: 420px;
+			display: flex;
+			align-items: end;
+		}
+
+		.sector-card::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(180deg, rgba(8, 16, 14, 0.04) 0%, rgba(8, 16, 14, 0.86) 100%);
+		}
+
+		.sector-card.one {
+			background: url("https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80") center/cover;
+		}
+
+		.sector-card.two {
+			background: url("https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80") center/cover;
+		}
+
+		.sector-card.three {
+			background: url("https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80") center/cover;
+		}
+
+		.sector-content {
+			position: relative;
+			z-index: 1;
+			padding: 26px;
+			color: #f9f5ee;
+		}
+
+		.sector-content h3 {
+			font-size: 0.98rem;
+			margin-bottom: 10px;
+		}
+
+		.sector-content p {
+			color: rgba(249, 245, 238, 0.82);
+			line-height: 1.75;
+			font-size: 0.84rem;
+		}
+
+		.insights-grid {
+			display: grid;
+			grid-template-columns: 1.2fr 0.8fr;
+			gap: 22px;
+		}
+
+		.insight-card {
+			border-radius: var(--radius-md);
+			padding: 30px;
+		}
+
+		.process-list {
+			display: grid;
+			gap: 16px;
+			margin-top: 18px;
+		}
+
+		.process-item {
+			display: grid;
+			grid-template-columns: auto 1fr;
+			gap: 16px;
+			align-items: start;
+			padding: 16px 0;
+			border-top: 1px solid rgba(23, 38, 31, 0.08);
+		}
+
+		.process-item:first-child {
+			border-top: 0;
+			padding-top: 0;
+		}
+
+		.process-index {
+			width: 42px;
+			height: 42px;
+			border-radius: 50%;
+			display: grid;
+			place-items: center;
+			background: var(--accent-soft);
+			color: var(--accent);
+			font-weight: 800;
+		}
+
+		.process-copy strong {
+			display: block;
+			margin-bottom: 7px;
+			font-size: 0.84rem;
+		}
+
+		.process-copy span {
+			color: var(--muted);
+			line-height: 1.75;
+			font-size: 0.84rem;
+		}
+
+		.coverage-card {
+			background:
+				linear-gradient(180deg, rgba(16, 35, 31, 0.92), rgba(16, 35, 31, 0.86)),
+				url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80") center/cover;
+			color: #f7f3ea;
+		}
+
+		.coverage-card p,
+		.coverage-card .process-copy span {
+			color: rgba(247, 243, 234, 0.8);
+		}
+
+		.coverage-grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 14px;
+			margin-top: 20px;
+		}
+
+		.coverage-pill {
+			padding: 14px 16px;
+			border-radius: 18px;
+			background: rgba(255, 255, 255, 0.08);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			font-size: 0.84rem;
+		}
+
+		.contact-panel {
+			border-radius: calc(var(--radius-lg) + 4px);
+			padding: 34px;
+			margin: 16px 0 60px;
+			display: grid;
+			grid-template-columns: 1fr auto;
+			gap: 24px;
+			align-items: center;
+		}
+
+		.contact-panel h2 {
+			font-size: clamp(0.98rem, 1.45vw, 1.22rem);
+			line-height: 1.2;
+			letter-spacing: -0.05em;
+			margin-bottom: 14px;
+			max-width: none;
+			white-space: normal;
+			text-wrap: balance;
+		}
+
+		.contact-panel p {
+			color: var(--muted);
+			max-width: 60ch;
+			line-height: 1.8;
+			font-size: 0.88rem;
+		}
+
+		.hero-grid > *,
+		.content-grid > *,
+		.sectors-grid > *,
+		.insights-grid > *,
+		.section-head > *,
+		.contact-panel > * {
+			min-width: 0;
+		}
+
+		h1,
+		h2,
+		h3,
+		p,
+		span,
+		strong,
+		a {
+			overflow-wrap: anywhere;
+		}
+
+		.lang-en {
+			display: block;
+		}
+
+		.lang-ar {
+			display: none;
+		}
+
+		body.lang-ar {
+			direction: rtl;
+		}
+
+		body.lang-ar .site-header-inner,
+		body.lang-ar .hero-actions,
+		body.lang-ar .section-head,
+		body.lang-ar .header-controls,
+		body.lang-ar .brand {
+			flex-direction: row-reverse;
+		}
+
+		body.lang-ar .site-header-inner,
+		body.lang-ar .header-controls {
+			justify-content: space-between;
+		}
+
+		body.lang-ar .brand,
+		body.lang-ar .brand-text,
+		body.lang-ar .nav-links {
+			text-align: right;
+		}
+
+		body.lang-ar .nav-links {
+			direction: rtl;
+			justify-content: flex-end;
+		}
+
+		body.lang-ar .process-item {
+			grid-template-columns: 1fr auto;
+		}
+
+		body.lang-ar .process-index {
+			order: 2;
+		}
+
+		body.lang-ar .process-copy {
+			order: 1;
+		}
+
+		.reveal {
+			opacity: 0;
+			transform: translateY(24px);
+			transition: opacity 700ms ease, transform 700ms ease;
+		}
+
+		.reveal.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		@media (max-width: 1040px) {
+			.hero-grid,
+			.content-grid,
+			.insights-grid,
+			.contact-panel {
+				grid-template-columns: 1fr;
+			}
+
+			.sectors-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.section-head {
+				align-items: start;
+				flex-direction: column;
+				gap: 14px;
+			}
+
+			body.lang-ar .section-head,
+			body.lang-ar .contact-panel {
+				flex-direction: column;
+			}
+
+			.contact-panel {
+				align-items: start;
+			}
+		}
+
+		@media (max-width: 760px) {
+			.page-shell {
+				width: min(100vw - 24px, 1180px);
+				padding-bottom: 72px;
+			}
+
+			.site-header {
+				position: relative;
+				border-bottom: none;
+			}
+
+			.site-header-inner {
+				width: min(100vw - 24px, 1180px);
+				justify-content: flex-start;
+			}
+
+			.header-controls {
+				display: none;
+			}
+
+			.mobile-bottom-nav {
+				display: flex;
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				z-index: 30;
+				backdrop-filter: blur(22px);
+				background: rgba(244, 239, 232, 0.82);
+				border-top: 1px solid rgba(23, 38, 31, 0.08);
+				justify-content: space-around;
+				align-items: center;
+				padding: 10px 16px;
+				padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+			}
+
+			.mobile-bottom-nav a {
+				color: var(--muted);
+				font-size: 0.8rem;
+				font-weight: 500;
+				padding: 8px 16px;
+				border-radius: 14px;
+				transition: background 200ms ease, color 200ms ease;
+			}
+
+			.mobile-bottom-nav a:hover,
+			.mobile-bottom-nav a:active {
+				background: var(--accent-soft);
+				color: var(--accent);
+			}
+
+			.hero-copy,
+			.insight-card,
+			.content-card,
+			.contact-panel {
+				padding: 20px;
+			}
+
+			.hero-meta,
+			.coverage-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.hero-actions {
+				gap: 10px;
+			}
+
+			.button {
+				width: 100%;
+			}
+
+			.hero-media {
+				min-height: 460px;
+			}
+
+			.section-head h2,
+			.contact-panel h2,
+			h1 {
+				text-wrap: pretty;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header class="site-header">
+		<div class="site-header-inner">
+			<a class="brand" href="#top" aria-label="Tawazon International Investment LLC home">
+				<span class="brand-text">
+					<strong>
+						<span class="lang-block lang-en">Tawazon</span>
+						<span class="lang-block lang-ar">توازن</span>
+					</strong>
+					<span>
+						<span class="lang-block lang-en">International Investment LLC</span>
+						<span class="lang-block lang-ar">للاستثمار الدولي ش.م.م</span>
+					</span>
+				</span>
+			</a>
+			<div class="header-controls">
+				<nav class="nav-links">
+					<a href="#about">About</a>
+					<a href="#sectors">Sectors</a>
+					<a href="#approach">Approach</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<main class="page-shell" id="top">
+		<section class="hero">
+			<div class="hero-grid">
+				<article class="hero-copy reveal">
+					<div class="lang-block lang-en">
+						<span class="eyebrow">Muscat to the GCC</span>
+						<h1>Strategic access for ambitious capital.</h1>
+						<p class="hero-intro">Tawazon International Investment LLC is a Muscat-based investment, liaison, and power-broking firm delivering integrated solutions for investors, developers, and enterprises across the GCC. We connect opportunity with capital, relationships, and execution.</p>
+						<div class="hero-actions">
+							<a class="button button-primary" href="#sectors">Explore sectors</a>
+							<a class="button button-secondary" href="#approach">See how we work</a>
+						</div>
+						<div class="hero-meta">
+							<div class="stat">
+								<strong>One-stop platform</strong>
+								<span>Investment origination, facilitation, structuring, and execution support.</span>
+							</div>
+							<div class="stat">
+								<strong>Regional reach</strong>
+								<span>Deep networks across the GCC with institutional access and local intelligence.</span>
+							</div>
+							<div class="stat">
+								<strong>Discreet delivery</strong>
+								<span>Complex transactions handled with precision, efficiency, and trust.</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="lang-block lang-ar">
+						<span class="eyebrow">من مسقط إلى الخليج</span>
+						<h1>نفاذ استراتيجي لرؤوس أموال تبحث عن أثر حقيقي.</h1>
+						<p class="hero-intro">طوازيون إنترناشيونال إنفستمنت ش.م.م هي شركة مقرها مسقط متخصصة في الاستثمار الاستراتيجي، الربط المؤسسي، والوساطة التنفيذية، وتقدم حلولاً متكاملة للمستثمرين والمطورين والشركات العاملة في دول الخليج. نحن نربط الفرص برأس المال والخبرة والتنفيذ.</p>
+						<div class="hero-actions">
+							<a class="button button-primary" href="#sectors">استكشف القطاعات</a>
+							<a class="button button-secondary" href="#approach">اطلع على منهجيتنا</a>
+						</div>
+						<div class="hero-meta">
+							<div class="stat">
+								<strong>منصة متكاملة</strong>
+								<span>من نشأة الفرصة الاستثمارية إلى التيسير والهيكلة ودعم التنفيذ.</span>
+							</div>
+							<div class="stat">
+								<strong>امتداد إقليمي</strong>
+								<span>شبكة راسخة عبر الخليج مع فهم عميق للسوق وعلاقات مؤسسية فعالة.</span>
+							</div>
+							<div class="stat">
+								<strong>تنفيذ باحترافية</strong>
+								<span>إدارة الصفقات المعقدة بكفاءة ودقة وسرية عالية.</span>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<aside class="hero-media reveal" aria-label="Skyscraper skyline and investment backdrop" data-hero-media>
+					<div class="media-card">
+						<div class="lang-block lang-en">
+							<h3>Trusted bridge between investors, institutions, and operators.</h3>
+							<p>From strategic entry into the GCC to large-scale investment execution, Tawazon aligns stakeholders and keeps momentum from concept to completion.</p>
+						</div>
+						<div class="lang-block lang-ar">
+							<h3>جسر موثوق بين المستثمرين والمؤسسات والجهات المنفذة.</h3>
+							<p>من الدخول الاستراتيجي إلى أسواق الخليج وحتى تنفيذ الاستثمارات الكبرى، تعمل طوازيون على مواءمة الأطراف المختلفة وتحويل الفكرة إلى إنجاز فعلي.</p>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</section>
+
+		<section id="about">
+			<div class="section-head reveal">
+				<div class="lang-block lang-en">
+					<h2>Built for deals that need access, structure, and follow-through.</h2>
+				</div>
+				<div class="lang-block lang-ar">
+					<h2>مصممة للفرص التي تحتاج إلى نفاذ وهيكلة ومتابعة تنفيذية.</h2>
+				</div>
+
+				<div class="lang-block lang-en">
+					<p>Our strength lies in combining market intelligence, institutional relationships, and strategic transaction design to remove friction for businesses operating in fast-moving GCC markets.</p>
+				</div>
+				<div class="lang-block lang-ar">
+					<p>تكمن قوتنا في الدمج بين المعرفة السوقية، والعلاقات المؤسسية، والتصميم الاستراتيجي للصفقات، بما يختصر التعقيد ويمنح الأعمال مرونة أعلى في أسواق الخليج المتسارعة.</p>
+				</div>
+			</div>
+
+			<div class="content-grid">
+				<article class="content-card reveal">
+					<div class="lang-block lang-en">
+						<h3>End-to-end business facilitation</h3>
+						<p>Tawazon supports the full commercial journey: opportunity screening, partner alignment, market access, transaction structuring, negotiation support, and execution coordination. That reduces fragmentation and keeps strategic initiatives moving.</p>
+					</div>
+					<div class="lang-block lang-ar">
+						<h3>تيسير أعمال متكامل من البداية إلى النهاية</h3>
+						<p>تدعم طوازيون كامل الرحلة التجارية: فحص الفرص، ومواءمة الشركاء، وتسهيل الدخول إلى السوق، وهيكلة الصفقات، ودعم التفاوض، وتنسيق التنفيذ. هذا يقلل التشتت ويحافظ على تقدم المبادرات الاستراتيجية.</p>
+					</div>
+				</article>
+
+				<article class="content-card reveal">
+					<div class="lang-block lang-en">
+						<h3>Advisory with execution discipline</h3>
+						<p>We do not stop at strategy. Our model is built around practical progress, discreet stakeholder management, and outcome-focused deal flow across investment, development, and cross-border collaboration.</p>
+					</div>
+					<div class="lang-block lang-ar">
+						<h3>استشارات مرتبطة بانضباط تنفيذي</h3>
+						<p>لا نتوقف عند الاستراتيجية فقط. نموذج عملنا قائم على التقدم العملي، وإدارة الأطراف المعنية بسرية، وتحويل فرص الاستثمار والتطوير والشراكات العابرة للحدود إلى نتائج ملموسة.</p>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section id="sectors">
+			<div class="section-head reveal">
+				<div class="lang-block lang-en">
+					<h2>Active across high-growth sectors.</h2>
+				</div>
+				<div class="lang-block lang-ar">
+					<h2>حضور فعّال في القطاعات الأعلى نمواً.</h2>
+				</div>
+
+				<div class="lang-block lang-en">
+					<p>We support capital deployment, partner sourcing, facilitation, and execution across strategic industries where regional insight and trusted relationships matter most.</p>
+				</div>
+				<div class="lang-block lang-ar">
+					<p>ندعم توظيف رأس المال، واختيار الشركاء، والتيسير، والتنفيذ عبر قطاعات استراتيجية تتطلب فهماً إقليمياً عميقاً وعلاقات موثوقة ومباشرة.</p>
+				</div>
+			</div>
+
+			<div class="sectors-grid">
+				<article class="sector-card one reveal">
+					<div class="sector-content">
+						<div class="lang-block lang-en">
+							<h3>Real Estate, Investments, and Development</h3>
+							<p>Positioning projects, securing aligned partners, and structuring growth-ready developments with commercial clarity.</p>
+						</div>
+						<div class="lang-block lang-ar">
+							<h3>العقار والاستثمارات والتطوير</h3>
+							<p>تهيئة المشاريع، وربطها بالشركاء المناسبين، وهيكلة فرص تطوير جاهزة للنمو برؤية تجارية واضحة.</p>
+						</div>
+					</div>
+				</article>
+
+				<article class="sector-card two reveal">
+					<div class="sector-content">
+						<div class="lang-block lang-en">
+							<h3>Oil, Gas, and Renewable Energy</h3>
+							<p>Facilitating strategic entry, regional partnerships, and execution support in conventional and future-facing energy markets.</p>
+						</div>
+						<div class="lang-block lang-ar">
+							<h3>النفط والغاز والطاقة المتجددة</h3>
+							<p>تسهيل الدخول الاستراتيجي، وبناء الشراكات الإقليمية، ودعم التنفيذ في أسواق الطاقة التقليدية والمستقبلية.</p>
+						</div>
+					</div>
+				</article>
+
+				<article class="sector-card three reveal">
+					<div class="sector-content">
+						<div class="lang-block lang-en">
+							<h3>Mining, Natural Resources, and Finance</h3>
+							<p>Connecting resource-backed opportunities with capital, structuring, diligence, and operational traction across the GCC.</p>
+						</div>
+						<div class="lang-block lang-ar">
+							<h3>التعدين والموارد الطبيعية والاستثمارات المالية</h3>
+							<p>ربط الفرص المدعومة بالأصول والموارد برأس المال والهيكلة والدراسات اللازمة والزخم التنفيذي داخل الخليج.</p>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section id="approach">
+			<div class="insights-grid">
+				<article class="insight-card reveal">
+					<div class="lang-block lang-en">
+						<span class="eyebrow">Approach</span>
+						<h2>Structured around speed, discretion, and execution.</h2>
+						<div class="process-list">
+							<div class="process-item">
+								<div class="process-index">01</div>
+								<div class="process-copy">
+									<strong>Opportunity mapping</strong>
+									<span>Evaluate market potential, strategic fit, and stakeholder alignment before resources are deployed.</span>
+								</div>
+							</div>
+							<div class="process-item">
+								<div class="process-index">02</div>
+								<div class="process-copy">
+									<strong>Partner and capital alignment</strong>
+									<span>Connect the right institutions, investors, operators, and technical parties to move with confidence.</span>
+								</div>
+							</div>
+							<div class="process-item">
+								<div class="process-index">03</div>
+								<div class="process-copy">
+									<strong>Transaction design and follow-through</strong>
+									<span>Structure pathways to execution and keep momentum through negotiation, approvals, and delivery support.</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="lang-block lang-ar">
+						<span class="eyebrow">المنهجية</span>
+						<h2>منهجية مبنية على السرعة والسرية والانضباط التنفيذي.</h2>
+						<div class="process-list">
+							<div class="process-item">
+								<div class="process-index">01</div>
+								<div class="process-copy">
+									<strong>رسم خارطة الفرصة</strong>
+									<span>تقييم الجدوى السوقية والملاءمة الاستراتيجية وتوافق الأطراف قبل توجيه الموارد.</span>
+								</div>
+							</div>
+							<div class="process-item">
+								<div class="process-index">02</div>
+								<div class="process-copy">
+									<strong>مواءمة الشركاء ورأس المال</strong>
+									<span>ربط الجهات المناسبة من مستثمرين ومؤسسات ومشغلين وأطراف فنية ضمن إطار واضح وعملي.</span>
+								</div>
+							</div>
+							<div class="process-item">
+								<div class="process-index">03</div>
+								<div class="process-copy">
+									<strong>هيكلة الصفقة ومتابعة التنفيذ</strong>
+									<span>تصميم مسار التنفيذ والحفاظ على الزخم خلال التفاوض والموافقات ودعم التسليم.</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<article class="insight-card coverage-card reveal">
+					<div class="lang-block lang-en">
+						<span class="eyebrow">Regional Position</span>
+						<h3>Muscat-rooted. GCC-connected.</h3>
+						<p>Tawazon operates as a high-trust connector across Oman and the broader Gulf, helping businesses navigate local realities while preserving strategic momentum in cross-border deals.</p>
+						<div class="coverage-grid">
+							<div class="coverage-pill">Investment Liaison</div>
+							<div class="coverage-pill">Power Brokering</div>
+							<div class="coverage-pill">Institutional Access</div>
+							<div class="coverage-pill">Execution Support</div>
+						</div>
+					</div>
+					<div class="lang-block lang-ar">
+						<span class="eyebrow">الموقع الإقليمي</span>
+						<h3>جذور في مسقط. شبكة تمتد عبر الخليج.</h3>
+						<p>تعمل طوازيون كحلقة وصل عالية الموثوقية بين عُمان وبقية دول الخليج، بما يساعد الشركات على فهم الواقع المحلي مع الحفاظ على الزخم الاستراتيجي في الصفقات العابرة للحدود.</p>
+						<div class="coverage-grid">
+							<div class="coverage-pill">ربط استثماري</div>
+							<div class="coverage-pill">وساطة تنفيذية</div>
+							<div class="coverage-pill">نفاذ مؤسسي</div>
+							<div class="coverage-pill">دعم تشغيلي</div>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section>
+			<div class="contact-panel reveal">
+				<div>
+					<div class="lang-block lang-en">
+						<h2>Ready to move a GCC opportunity forward?</h2>
+						<p>Tawazon helps investors, developers, and enterprises reduce friction between strategy and execution. If the opportunity matters, the process around it should be equally strong.</p>
+					</div>
+					<div class="lang-block lang-ar">
+						<h2>هل لديكم فرصة تريدون دفعها إلى الأمام داخل الخليج؟</h2>
+						<p>تساعد طوازيون المستثمرين والمطورين والشركات على تقليص الفجوة بين الرؤية والتنفيذ. عندما تكون الفرصة مهمة، يجب أن تكون المنظومة المحيطة بها على المستوى نفسه من القوة والاحتراف.</p>
+					</div>
+				</div>
+				<div class="hero-actions">
+					<a class="button button-primary" href="#top">
+						<span class="lang-block lang-en">Tawazon International</span>
+						<span class="lang-block lang-ar">توازن الدولية</span>
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<nav class="mobile-bottom-nav">
+		<a href="#about">About</a>
+		<a href="#sectors">Sectors</a>
+		<a href="#approach">Approach</a>
+	</nav>
+
+	<script>
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("visible");
+					observer.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.15 });
+
+		document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+	</script>
+</body>
+</html>
